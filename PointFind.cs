@@ -11,11 +11,12 @@ namespace Dots
         public List<Point> finder(List<Point> points, int x, int y, int size)
         {
             int geypotenuza = size*size*8;
-            List<Point> outputList = new List<Point>();
+            var outputList = new List<Point>();
             foreach (Point p in points)
             {
                 int a = p.CoordX > x ? p.CoordX - x : x - p.CoordX;
                 int b = p.CoordY > y ? p.CoordY - y : y - p.CoordY;
+                Console.WriteLine($"{p.CoordX}, {p.CoordY}");
 
                 if (a * a + b * b < geypotenuza)
                 {
@@ -27,6 +28,8 @@ namespace Dots
             {
                 int a = p.CoordX > x ? p.CoordX - x : x - p.CoordX;
                 int b = p.CoordY > y ? p.CoordY - y : y - p.CoordY;
+
+                Console.WriteLine(a * a + b * b);
 
                 if (a * a + b * b == geypotenuza)
                 {
